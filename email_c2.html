@@ -53,27 +53,6 @@
             margin-bottom: 32px;
             text-align: center;
         }
-
-        .form{
-            display: flex;
-            flex-direction: column;
-        }
-        .label{
-            font-size: var(--sm);
-            font-weight: bold;
-            margin-bottom: 4px;
-        }
-        .input{
-            background-color: var(--txt-input-field);
-            border: none;
-            border-radius: 8px;
-            height: 30px;
-            font-size: var(--md);
-            padding: 6px;
-            margin-bottom: 12px;
-            font-family: 'Quicksand', sans-serif;
-        }
-
         .primary-button{
             background-color: var(--hospital-green);
             border-radius: 8px;
@@ -103,28 +82,23 @@
 
     <!-- Creamos un div para poder centrar nuestros elementos-->
     <div class="login">
-
         <!-- El segundo contenedor para todos los archivos que tendremos dentro -->
         <div class="form-container">
             <img src="./logos/logo_yard_sale.svg" alt="logo" class="logo">
 
             <!-- definimos el titulo y el subtitulo -->
-            <h1 class="title">Create a new password</h1>
-            <p class="subtitle">Enter a new password for you account</p>
-            <!-- Cremos nuestro formulario -->
-            <form action="/" class="form">
-                <!-- el for/ id del label y input deben ser iguales-->
-                <label for="password" class="label">Password</label>
-                <input type="password" id="password" placeholder="*********" class="input input-password">
+            <h1 class="title">Email has been sent!</h1>
+            <p class="subtitle">Please check your inbox for instructions on how to reset the password </p>
 
-                <!-- debemos diferencias nuestro elementos -->
-                <label for="new-password" class="label">Password</label>
-                <input type="password" id="new-password" placeholder="*********" class="input input-password">
+            <div class="email-img">
+                <img src="./icons/email.svg" alt="email">
+            </div>
+            <button class="primary-button login-button">Login</button>
 
-            <!-- un input tambien puude ser un boton con el tipo submit -->
-            <!-- En las class podemos darle especialidades a nuestro boton, como -->
-            <input type="submit"  value="Confirm" class="primary-button login-button">
-            </form>
+            <p class="resend">
+                <span>Didn't receive the email</span>
+                <a href="/">Resend</a>
+            </p>
         </div>
     </div>
 </body>
