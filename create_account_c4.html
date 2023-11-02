@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Password</title>
+    <title>Create Account</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
@@ -11,7 +11,7 @@
         :root{
             --white:#FFFFFf;
             --black:#000000;
-            --very-light-pink: #8b6b69;
+            --very-light-pink: #866866;
             --txt-input-field: #f7f7f7;
             --hospital-green: #03A65A;
             --sm:14px;
@@ -22,7 +22,6 @@
             margin: 0;
             font-family: 'Quicksand', sans-serif;
         }
-
         .login{
             width: 100%;
             height: 100vh;
@@ -33,7 +32,6 @@
             display: grid;
             grid-template-rows: auto 1fr auto;
             width: 300px;
-            justify-items: center;
         }
 
         .logo{
@@ -42,43 +40,42 @@
             justify-self: center;
             display: none;
         }
+
         .title{
             font-size: var(--lg);
-            margin-bottom: 12px;
-            text-align: center;
+            margin-bottom: 36px;
+            text-align: start;
         }
-        .subtitle{
-            color: var(--very-light-pink);
-            font-size: var(--md);
-            font-weight: 300;
-            margin-top: 0;
-            margin-bottom: 32px;
-            text-align: center;
-        }
-        .email-img{
-            width: 132px;
-            height: 132px;
-            border-radius: 50%;
-            background-color: var(--txt-input-field);
+        .form{
             display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 24px;
+            flex-direction: column;
         }
-        .email-img img{
-            width: 80px;
+
+        .form div{
+            display: flex;
+            flex-direction: column;
         }
-        .resend{
+        .label{
             font-size: var(--sm);
+            font-weight: bold;
+            margin-bottom: 4px;
         }
-        .resend span{
-            color: var(--very-light-pink)
+        .input{
+            background-color: var(--txt-input-field);
+            border: none;
+            border-radius: 8px;
+            height: 30px;
+            font-size: var(--md);
+            padding: 6px;
+            margin-bottom: 12px;
+            font-family: 'Quicksand', sans-serif;
         }
-        .resend a{
-            color: var(--hospital-green);
-            text-decoration: none;
+        .input-name,
+        .input-email,
+        .input-password{
+            margin-bottom: 22px;
         }
-        
+
         .primary-button{
             background-color: var(--hospital-green);
             border-radius: 8px;
@@ -91,21 +88,26 @@
             height: 50px;
             font-family: 'Quicksand', sans-serif;
         }
-
         .login-button{
-            margin-top: 20px;
+            margin-top: 14px;
             margin-bottom: 30px;
         }
 
-        .primary-button:hover{
+        .login-button:hover{
             background-color: var(--white);
+            border: solid 2px var(--hospital-green);
             color: var(--hospital-green);
-            border: 2px solid var(--hospital-green);
+            
         }
 
         @media (max-width:640px) {
-            .logo{
-                display: block;
+
+            .form-container{
+                height: 100%;
+            }
+            .form{
+                height: 100%;
+                justify-content: space-between;
             }
         }
     </style>
@@ -118,23 +120,25 @@
 
         <!-- El segundo contenedor para todos los archivos que tendremos dentro -->
         <div class="form-container">
-            <img src="./logos/logo_yard_sale.svg" alt="logo" class="logo">
+            <h1 class="title">My account</h1> 
+            <form action="/" class="form">
+                <div>
+                <!-- el for/ id del label y input deben ser iguales-->
+                <label for="name" class="label">Nombre</label>
+                <input type="text" id="name" placeholder="Yukko" class="input input-name">
 
-            <!-- definimos el titulo y el subtitulo -->
-            <h1 class="title">El correo a sido enviado</h1>
-            <p class="subtitle">Please check your inbox for instructions on how to reset the password </p>
+                <label for="email" class="label">Correo</label>
+                <input type="text" id="email" placeholder="plazi@example.com" class="input input-email">
 
-            <div class="email-img">
-                <img src="/icons/email.svg " alt="email-logo">
-            </div>
-            
-            <button class="primary-button login-button">Login</button>
-            
-            <p class="resend">
-                <span>Didn't receive the email?</span>
-                <a href="/">Resend</a>
-            </p>
+                <!-- debemos diferencias nuestro elementos -->
+                <label for="password" class="label">Password</label>
+                <input type="password" id="password" placeholder="*********" class="input input-password">
+                </div>
 
+            <!-- un input tambien puude ser un boton con el tipo submit -->
+            <!-- En las class podemos darle especialidades a nuestro boton, como -->
+            <input type="submit"  value="Create" class="primary-button login-button">
+            </form>
         </div>
     </div>
 </body>
